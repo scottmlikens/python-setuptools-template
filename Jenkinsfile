@@ -24,14 +24,8 @@ pipeline {
                 // Produce the unit test reports
                 sh 'python3 -m xmlrunner'
                 // Produce the coverage reports
-                sh 'nose2 -v --with-coverage --coverage-report.xml'
             }
             post {
-                always {
-                    // Always post test and coverage reports to Jenkins
-                    junit 'test-reports/*.xml'
-                    cobertura coberturaReportFile: 'coverage.xml'
-                }
                 success {
                     // build source and binary wheels
                     sh 'python3 setup.py sdist bdist_wheel'
