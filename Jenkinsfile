@@ -37,9 +37,6 @@ pipeline {
                     sh 'python3 setup.py sdist bdist_wheel'
                     // Push these somewhere if you want...
                 }
-                cleanup {
-                    cleanWs()
-                }
             }
         }
     }
