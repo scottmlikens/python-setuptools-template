@@ -15,7 +15,6 @@ pipeline {
             steps {
                 // Ensure that Python 3 and Pip are installed
                 // then install the project required modules
-                sh 'apt-get install -y python3 python3-pip'
                 sh 'python3 -m pip install twine --trusted-host pypi.org'
                 sh 'python3 -m pip install -r requirements.txt --trusted-host pypi.org --upgrade'
             }
