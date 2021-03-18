@@ -1,7 +1,14 @@
 pipeline {
     agent {
-        // This is the label of the build slave to use
-        label 'linux'
+        kubernetes {
+            containerTemplate {
+                name 'shell'
+                image 'python3.8'
+                command 'sleep'
+                args 'infinity'
+            }
+            defaultContainer 'shell'
+        }
     }
     stages {
         stage('Setup environment') {            
