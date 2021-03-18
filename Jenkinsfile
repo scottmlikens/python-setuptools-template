@@ -3,7 +3,7 @@ pipeline {
         kubernetes {
             containerTemplate {
                 name 'shell'
-                image 'python3.8'
+                image 'python:3.8'
                 command 'sleep'
                 args 'infinity'
             }
