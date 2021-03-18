@@ -22,7 +22,7 @@ pipeline {
         stage('Produce output') {
             steps {
                 // Produce the unit test reports
-                sh 'python3 -m xmlrunner -i ./test-reports'
+                sh 'python3 -m xmlrunner'
                 // Produce the coverage reports
                 sh 'nose2 -v --with-coverage --coverage-report.xml'
             }
