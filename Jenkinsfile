@@ -25,13 +25,6 @@ pipeline {
                 sh 'python3 -m xmlrunner'
                 // Produce the coverage reports
             }
-            post {
-                success {
-                    // build source and binary wheels
-                    sh 'python3 setup.py sdist bdist_wheel'
-                    // Push these somewhere if you want...
-                }
-            }
         }
     }
 }
